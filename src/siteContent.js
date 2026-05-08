@@ -17,12 +17,12 @@ export const siteContent = {
     stats: [
       { label: "JCI Accredited", icon: "ShieldCheck", color: "text-green-500" },
       { label: "24/7 Concierge", icon: "Globe", color: "text-blue-500" },
-      { label: "English Speaking", icon: "UserRoundCheck", color: "text-purple-500" }
+      { label: "English/Arabic/Korean", icon: "UserRoundCheck", color: "text-purple-500" }
     ]
   },
   services: {
-    title: "Our Specialized Services",
-    subtitle: "We provide a seamless healthcare experience, from initial consultation to recovery and beyond.",
+    title: "Comprehensive Healthcare Solutions",
+    subtitle: "Professional medical support designed for international patients from Southeast Asia, Korea, and the Middle East.",
     items: [
       {
         id: "checkup",

@@ -74,9 +74,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative bg-slate-50 py-20 lg:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="lg:w-2/3">
+    <section className="relative bg-white py-20 lg:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 lg:flex items-center gap-12">
+        <div className="lg:w-1/2">
           <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
             {hero.title} <br />
             <span className="text-blue-600">{hero.titleAccent}</span>
@@ -104,15 +104,49 @@ const Hero = () => {
             ))}
           </div>
         </div>
-      </div>
-      
-      <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block">
-        <div className="w-full h-full bg-gradient-to-l from-blue-100/50 to-transparent"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-3xl"></div>
+        <div className="lg:w-1/2 mt-12 lg:mt-0">
+          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
+            <img 
+              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000" 
+              alt="Modern Medical Center" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
+
+const HospitalCard = ({ name, location, tags, desc }) => (
+  <div className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-all">
+    <div className="h-48 relative">
+      <img 
+        src={`https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800&hospital=${encodeURIComponent(name)}`} 
+        alt={name}
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+        <div className="text-white">
+          <div className="text-xs font-bold uppercase tracking-wider mb-1 flex items-center gap-1">
+            <Icons.Globe size={12} /> {location}
+          </div>
+          <h3 className="text-lg font-bold">{name}</h3>
+        </div>
+      </div>
+    </div>
+    <div className="p-6">
+      <div className="flex flex-wrap gap-2 mb-4">
+        {tags.map((s, i) => (
+          <span key={i} className="px-2 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded uppercase tracking-wide">{s}</span>
+        ))}
+      </div>
+      <p className="text-slate-500 text-sm mb-4">{desc}</p>
+      <button className="text-blue-600 font-bold text-sm hover:underline">View Details</button>
+    </div>
+  </div>
+);
 
 const Services = () => {
   const { services } = siteContent;
