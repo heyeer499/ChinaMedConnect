@@ -107,8 +107,8 @@ const Hero = () => {
         <div className="lg:w-1/2 mt-12 lg:mt-0">
           <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
             <img 
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000" 
-              alt="Modern Medical Center" 
+              src="https://sc01.alicdn.com/kf/H04f2113de49b410e9aa7ca5cd2551fac9.png" 
+              alt="World-Class Healthcare" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
