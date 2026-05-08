@@ -158,7 +158,16 @@ const AIHub = () => {
         <h2 className="text-4xl lg:text-5xl font-black text-white mb-6 tracking-tight">{aiHub.title}</h2>
         <p className="text-slate-400 max-w-2xl mx-auto text-xl font-medium mb-16">{aiHub.subtitle}</p>
 
-        <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 lg:p-16">
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          {aiHub.analytics.map((item, i) => (
+            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <p className="text-indigo-400 text-3xl font-black mb-1">{item.value}</p>
+              <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">{item.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 lg:p-16 mb-24">
           {!done ? (
             <form onSubmit={handleAnalyze} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -174,8 +183,8 @@ const AIHub = () => {
 
               <div className="bg-slate-800/50 rounded-2xl p-10 border-2 border-dashed border-white/10 hover:border-indigo-500/50 transition-all group cursor-pointer">
                 <Icons.UploadCloud size={48} className="text-indigo-500 mx-auto mb-4 group-hover:-translate-y-1 transition-transform" />
-                <p className="text-white font-bold text-lg">Drop your medical reports here</p>
-                <p className="text-slate-500 text-sm mt-2">Support PDF, DICOM, JPG (Max 50MB)</p>
+                <p className="text-white font-bold text-lg">Initialize Digital Health Intake</p>
+                <p className="text-slate-500 text-sm mt-2">Upload medical records for cross-border analysis</p>
                 <input type="file" className="hidden" />
               </div>
 
@@ -184,33 +193,54 @@ const AIHub = () => {
                 className={`w-full ${analyzing ? 'bg-slate-700' : 'bg-indigo-600 hover:bg-indigo-700'} text-white py-6 rounded-2xl font-black text-xl transition-all shadow-xl shadow-indigo-900/20 flex items-center justify-center gap-3`}
               >
                 {analyzing ? (
-                  <> <Icons.Loader2 className="animate-spin" /> AI is analyzing your data...</>
+                  <> <Icons.Loader2 className="animate-spin" /> Running Proprietary Matching Algorithm...</>
                 ) : (
-                  <> Start Intelligent Matching </>
+                  <> Activate AI Precision Hub </>
                 )}
               </button>
             </form>
           ) : (
             <div className="text-center animate-in zoom-in-95 duration-500">
                <div className="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center text-white mx-auto mb-8 shadow-2xl shadow-emerald-500/50">
-                 <Icons.CheckCheck size={40} />
+                 <Icons.ShieldCheck size={40} />
                </div>
-               <h3 className="text-3xl font-black text-white mb-4">Initial Assessment Ready!</h3>
-               <p className="text-slate-400 text-lg mb-10">Our AI has identified 3 top-tier specialists matching your condition. <br />Your medical summary is ready for expert verification.</p>
+               <h3 className="text-3xl font-black text-white mb-4">AI Matching Complete</h3>
+               <p className="text-slate-400 text-lg mb-10">We have identified 3 high-precision specialist matches for your case. <br />Your <b>Digital Health Passport</b> has been generated.</p>
                <button onClick={() => setDone(false)} className="px-8 py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-all">
-                 View AI Matching Report
+                 Review Full Assessment
                </button>
             </div>
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
           {aiHub.features.map((feature, i) => (
-            <div key={i} className="text-left">
-              <h4 className="text-white font-black text-xl mb-3 flex items-center gap-2">
-                <Icons.CheckCircle2 className="text-indigo-500" size={20} /> {feature.title}
-              </h4>
+            <div key={i} className="group">
+              <div className="w-8 h-1 bg-indigo-600 mb-4 group-hover:w-full transition-all duration-500"></div>
+              <h4 className="text-white font-black text-xl mb-3">{feature.title}</h4>
               <p className="text-slate-400 font-medium leading-relaxed">{feature.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Vision = () => {
+  const { vision } = siteContent;
+  return (
+    <section className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 tracking-tight">{vision.title}</h2>
+          <div className="w-20 h-1.5 bg-blue-600 mx-auto"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          {vision.items.map((item, i) => (
+            <div key={i}>
+              <h3 className="text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter">{item.title}</h3>
+              <p className="text-slate-600 leading-relaxed font-medium">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -430,6 +460,7 @@ function App() {
       <Hospitals />
       <HowItWorks />
       <InquiryForm />
+      <Vision />
       <Footer />
     </div>
   );

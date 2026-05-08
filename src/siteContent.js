@@ -21,17 +21,30 @@ export const siteContent = {
     ]
   },
   aiHub: {
-    title: "AI Precision Evaluation Hub",
-    subtitle: "Upload your medical records for an instant initial assessment and expert matching.",
+    title: "AI Medical Intelligence Hub",
+    subtitle: "Our proprietary AI engine analyzes global medical data to provide precision matching and digital health roadmaps.",
     steps: [
-      { id: 1, label: "Symptoms & History", icon: "FileText" },
-      { id: 2, label: "AI Analysis", icon: "Cpu" },
-      { id: 3, label: "Expert Matching", icon: "Stethoscope" }
+      { id: 1, label: "Digital Intake", icon: "Database" },
+      { id: 2, label: "Cross-Border Logic", icon: "Network" },
+      { id: 3, label: "Precision Matching", icon: "Target" }
+    ],
+    analytics: [
+      { label: "Success Rate Analysis", value: "94%" },
+      { label: "Cost Optimization", value: "30% Savings" },
+      { label: "Processing Speed", value: "< 2.4s" }
     ],
     features: [
-      { title: "Precision Triage", desc: "Our AI matches your specific condition with the top 1% of Chinese specialists." },
-      { title: "Cost Estimation", desc: "Get an accurate breakdown of treatment, travel, and recovery costs." },
-      { title: "Multilingual Analysis", desc: "AI-powered translation of your local medical reports into professional Chinese clinical standards." }
+      { title: "Digital Health Passport", desc: "Structured, blockchain-ready medical records that travel with the patient globally." },
+      { title: "Dynamic Cost Modeling", desc: "AI-driven real-time budgeting including treatment, luxury recovery, and logistics." },
+      { title: "Proprietary Specialist Ranking", desc: "Access a private database of China's top 1% medical experts, verified by clinical outcomes." }
+    ]
+  },
+  vision: {
+    title: "The Future of Global Health",
+    items: [
+      { title: "Data-Driven Decisions", desc: "Moving beyond traditional brokerage into high-value medical data intelligence." },
+      { title: "Global Accessibility", desc: "Bridging healthcare gaps for the Middle East, SE Asia, and beyond with technology." },
+      { title: "Investment-Grade Reliability", desc: "A scalable, standardized platform designed for international healthcare excellence." }
     ]
   },
   services: {
