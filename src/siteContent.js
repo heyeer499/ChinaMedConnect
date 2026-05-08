@@ -11,16 +11,31 @@ export const siteContent = {
   hero: {
     title: "World-Class Medical Care",
     titleAccent: "Across China",
-    subtitle: "Access premier hospitals, leading specialists, and traditional healing. We bridge the gap for international patients seeking health excellence.",
-    ctaPrimary: "Start Your Journey",
+    subtitle: "Precision medicine meets AI-driven analysis. Access premier hospitals and elite specialists with our intelligent pre-diagnosis system.",
+    ctaPrimary: "Start AI Evaluation",
     ctaSecondary: "Speak with an Expert",
     stats: [
+      { label: "AI Pre-Diagnosis", icon: "BrainCircuit", color: "text-indigo-500" },
       { label: "JCI Accredited", icon: "ShieldCheck", color: "text-green-500" },
-      { label: "24/7 Concierge", icon: "Globe", color: "text-blue-500" },
-      { label: "English/Arabic/Korean", icon: "UserRoundCheck", color: "text-purple-500" }
+      { label: "24/7 Concierge", icon: "Globe", color: "text-blue-500" }
+    ]
+  },
+  aiHub: {
+    title: "AI Precision Evaluation Hub",
+    subtitle: "Upload your medical records for an instant initial assessment and expert matching.",
+    steps: [
+      { id: 1, label: "Symptoms & History", icon: "FileText" },
+      { id: 2, label: "AI Analysis", icon: "Cpu" },
+      { id: 3, label: "Expert Matching", icon: "Stethoscope" }
+    ],
+    features: [
+      { title: "Precision Triage", desc: "Our AI matches your specific condition with the top 1% of Chinese specialists." },
+      { title: "Cost Estimation", desc: "Get an accurate breakdown of treatment, travel, and recovery costs." },
+      { title: "Multilingual Analysis", desc: "AI-powered translation of your local medical reports into professional Chinese clinical standards." }
     ]
   },
   services: {
+
     title: "Comprehensive Healthcare Solutions",
     subtitle: "Professional medical support designed for international patients from Southeast Asia, Korea, and the Middle East.",
     items: [
