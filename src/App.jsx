@@ -164,15 +164,26 @@ const AIHub = () => {
       const data = await response.json();
       */
       
-      // Simulating a real network delay
-      await new Promise(resolve => setTimeout(resolve, 3500));
+      // Simulation of a highly sophisticated medical expert system
+      // This logic is designed to show potential investors the depth of our matching engine
+      await new Promise(resolve => setTimeout(resolve, 4000));
       
-      setAiReport({
-        specialists: ["Prof. Zhang (Oncology)", "Dr. Lee (Cardiology)", "Dr. Wang (TCM)"],
-        confidence: "98.2%",
-        estimatedCost: "$12,000 - $15,000"
-      });
-      
+      const mockReports = {
+        default: {
+          specialists: ["Prof. Chen (Specialist)", "Dr. Zhao (International Dept.)"],
+          confidence: "96.8%",
+          estimatedCost: "$8,500 - $12,000",
+          summary: "Based on our AI triage, your case matches the clinical excellence standards of top-tier Shanghai institutions."
+        },
+        tcm: {
+          specialists: ["Master Li (TCM Expert)", "Dr. Sun (Acupuncture Specialist)"],
+          confidence: "98.5%",
+          estimatedCost: "$3,000 - $5,500",
+          summary: "AI analysis identifies high potential for holistic recovery using our integrated TCM 2.0 protocols."
+        }
+      };
+
+      setAiReport(mockReports.default);
       setDone(true);
     } catch (error) {
       console.error("AI Analysis Failed:", error);
